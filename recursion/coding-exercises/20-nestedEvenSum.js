@@ -6,7 +6,6 @@ function nestedEvenSum(obj) {
         if (Number.isInteger(obj[item]) && obj[item] % 2 === 0) {
             sum += obj[item];
         } else if (typeof obj[item] === "object") {
-            console.log(obj[item]);
             sum += nestedEvenSum(obj[item]);
         }
     }
