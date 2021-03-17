@@ -1,15 +1,15 @@
 function capitalizeWords(arr) {
-    let capitals = [];
+  let capitals = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === arr[i].toUpperCase()) {
-            capitalizeWords(arr[i]);
-        } else {
-            arr[i] = arr[i].toUpperCase();
-            capitals.push(arr[i]);
-        }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i].toUpperCase()) {
+      capitalizeWords(arr[i]);
+    } else {
+      arr[i] = arr[i].toUpperCase();
+      capitals.push(arr[i]);
     }
-    return capitals;
+  }
+  return capitals;
 }
 
 let words = ["i", "am", "learning", "recursion"];
