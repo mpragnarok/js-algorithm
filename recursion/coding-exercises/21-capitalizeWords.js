@@ -6,9 +6,7 @@ function capitalizeWords(arr) {
             capitalizeWords(arr[i]);
         } else {
             arr[i] = arr[i].toUpperCase();
-            console.log(arr[i]);
             capitals.push(arr[i]);
-            console.log(capitals);
         }
     }
     return capitals;
