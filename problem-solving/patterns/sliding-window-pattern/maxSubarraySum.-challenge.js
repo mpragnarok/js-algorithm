@@ -13,20 +13,20 @@ maxSubarraySum([100, 200, 300, 400], 2); // 700
 // maxSubarraySum([2, 3], 3); // null
 
 function maxSubarraySum(arr, num) {
-    let maxSum = 0;
-    let tempSum = 0;
+  let maxSum = 0;
+  let tempSum = 0;
 
-    if (arr.length < num) return null;
-    for (let i = 0; i < num; i++) {
-        maxSum += arr[i];
-    }
+  if (arr.length < num) return null;
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
+  }
 
-    tempSum = maxSum;
+  tempSum = maxSum;
 
-    for (let i = num; i < arr.length; i++) {
-        console.log(`tempSum = ${tempSum} - ${arr[i - num]} + ${arr[i]};`);
-        tempSum = tempSum - arr[i - num] + arr[i];
-        maxSum = Math.max(maxSum, tempSum);
-    }
-    return maxSum;
+  for (let i = num; i < arr.length; i++) {
+    console.log(`tempSum = ${tempSum} - ${arr[i - num]} + ${arr[i]};`);
+    tempSum = tempSum - arr[i - num] + arr[i];
+    maxSum = Math.max(maxSum, tempSum);
+  }
+  return maxSum;
 }

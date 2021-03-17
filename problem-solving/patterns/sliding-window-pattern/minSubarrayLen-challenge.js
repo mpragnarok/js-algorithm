@@ -15,32 +15,30 @@ minSubArrayLen([3, 1, 7, 11, 2, 9, 8, 21, 62, 33, 19], 52); // 1 -> because [62]
 // minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 95); //0
 
 function minSubArrayLen(nums, sum) {
-    let total = 0;
-    let start = 0;
-    let end = 0;
-    let minLen = Infinity;
-    console.log(nums, sum);
-    while (start < nums.length) {
-        if (total < sum && end < nums.length) {
-            // if current window doesn't add up to the given sum then
-            // move the window to right
-            console.log(`${total} += ${nums[end]};`);
-            total += nums[end];
-            end++;
-        } else if (total >= sum) {
-            // if current window adds up to at least the sum given then
-            // we can shrink the window
-            minLen = Math.min(minLen, end - start);
-            console.log(
-                `minLen: ${minLen} = Math.min(${minLen}, ${end} - ${start})`
-            );
-            console.log(`${total} -= ${nums[start]};`);
-            total -= nums[start];
-            start++;
-        } else {
-            // current total less than required total but we reach the end, need this or else we'll be in an infinite loop
-            break;
-        }
+  let total = 0;
+  let start = 0;
+  let end = 0;
+  let minLen = Infinity;
+  console.log(nums, sum);
+  while (start < nums.length) {
+    if (total < sum && end < nums.length) {
+      // if current window doesn't add up to the given sum then
+      // move the window to right
+      console.log(`${total} += ${nums[end]};`);
+      total += nums[end];
+      end++;
+    } else if (total >= sum) {
+      // if current window adds up to at least the sum given then
+      // we can shrink the window
+      minLen = Math.min(minLen, end - start);
+      console.log(`minLen: ${minLen} = Math.min(${minLen}, ${end} - ${start})`);
+      console.log(`${total} -= ${nums[start]};`);
+      total -= nums[start];
+      start++;
+    } else {
+      // current total less than required total but we reach the end, need this or else we'll be in an infinite loop
+      break;
     }
-    return minLen === Infinity ? 0 : minLen;
+  }
+  return minLen === Infinity ? 0 : minLen;
 }

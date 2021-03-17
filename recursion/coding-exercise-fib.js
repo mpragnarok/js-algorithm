@@ -3,9 +3,9 @@ Write a recursive function called **fib**  which accepts a number and returns th
  */
 
 function fib(num) {
-    if (num <= 0) return 0;
-    if (num === 1 || num === 2) return 1;
-    return fib(num - 1) + fib(num - 2);
+  if (num <= 0) return 0;
+  if (num === 1 || num === 2) return 1;
+  return fib(num - 1) + fib(num - 2);
 }
 
 fib(4); // 3

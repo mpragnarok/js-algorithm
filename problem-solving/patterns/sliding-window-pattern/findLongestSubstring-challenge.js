@@ -33,27 +33,27 @@ Time Complexity - O (n)*/
 
 // Colt's solution
 function findLongestSubstring(str) {
-    str;
-    let longest = 0;
-    let seen = {};
-    let start = 0;
-    for (let i = 0; i < str.length; i++) {
-        let char = str[i];
-        console.log(seen);
+  str;
+  let longest = 0;
+  let seen = {};
+  let start = 0;
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    console.log(seen);
 
-        // if the char has seen, start from that char
-        if (seen[char]) {
-            console.log(char, seen[char]);
-            start = Math.max(start, seen[char]);
-            start;
-        }
-        // index - beginning of substring + 1 (to include current in count)
-        longest = Math.max(longest, i - start + 1);
-        console.log(`longest= Math.max( ${longest},${i}- ${start} + 1)`);
-        // store the index of the next char so as to not double count
-        seen[char] = i + 1;
+    // if the char has seen, start from that char
+    if (seen[char]) {
+      console.log(char, seen[char]);
+      start = Math.max(start, seen[char]);
+      start;
     }
-    return longest;
+    // index - beginning of substring + 1 (to include current in count)
+    longest = Math.max(longest, i - start + 1);
+    console.log(`longest= Math.max( ${longest},${i}- ${start} + 1)`);
+    // store the index of the next char so as to not double count
+    seen[char] = i + 1;
+  }
+  return longest;
 }
 
 // findLongestSubstring(""); // 0

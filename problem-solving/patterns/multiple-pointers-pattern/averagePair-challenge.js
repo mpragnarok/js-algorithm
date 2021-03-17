@@ -6,23 +6,23 @@ Space: O(1)
 */
 
 function averagePair(arr, ave) {
-    // two pointers
-    let left = 0;
-    let right = arr.length - 1;
-    console.log(arr, ave);
+  // two pointers
+  let left = 0;
+  let right = arr.length - 1;
+  console.log(arr, ave);
 
-    while (left < right) {
-        if ((arr[left] + arr[right]) / 2 === ave) {
-            console.log(true);
-            return true;
-        } else if ((arr[left] + arr[right]) / 2 > ave) {
-            right--;
-        } else {
-            left++;
-        }
+  while (left < right) {
+    if ((arr[left] + arr[right]) / 2 === ave) {
+      console.log(true);
+      return true;
+    } else if ((arr[left] + arr[right]) / 2 > ave) {
+      right--;
+    } else {
+      left++;
     }
-    console.log(false);
-    return false;
+  }
+  console.log(false);
+  return false;
 }
 
 // Sample Input:

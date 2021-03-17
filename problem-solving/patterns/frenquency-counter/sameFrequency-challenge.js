@@ -8,29 +8,29 @@ Time: O(N)*/
 // sameFrequency(22, 222); // true
 
 function sameFrequency(num1, num2) {
-    const num1String = num1.toString();
-    const num2String = num2.toString();
-    if (num1String.length !== num2String.length) return false;
+  const num1String = num1.toString();
+  const num2String = num2.toString();
+  if (num1String.length !== num2String.length) return false;
 
-    let countObj1 = {};
-    let countObj2 = {};
-    // iterate array or string with for...of
-    for (let char of num1String) {
-        countObj1[char] = (countObj1[char] || 0) + 1;
+  let countObj1 = {};
+  let countObj2 = {};
+  // iterate array or string with for...of
+  for (let char of num1String) {
+    countObj1[char] = (countObj1[char] || 0) + 1;
+  }
+
+  for (let char of num2String) {
+    countObj2[char] = (countObj2[char] || 0) + 1;
+  }
+  // iterate  object with for...in
+  for (let key in countObj1) {
+    if (!(key in countObj2)) {
+      return false;
     }
 
-    for (let char of num2String) {
-        countObj2[char] = (countObj2[char] || 0) + 1;
+    if (countObj1[key] !== countObj2[key]) {
+      return false;
     }
-    // iterate  object with for...in
-    for (let key in countObj1) {
-        if (!(key in countObj2)) {
-            return false;
-        }
-
-        if (countObj1[key] !== countObj2[key]) {
-            return false;
-        }
-    }
-    return true;
+  }
+  return true;
 }

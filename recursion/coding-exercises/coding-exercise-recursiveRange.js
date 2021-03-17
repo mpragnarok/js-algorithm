@@ -4,8 +4,8 @@ Write a function called **recursiveRange**  which accepts a number and adds up a
 // pure recursion
 
 function recursiveRange(num) {
-    if (num === 0) return 0;
-    return num + recursiveRange(num - 1);
+  if (num === 0) return 0;
+  return num + recursiveRange(num - 1);
 }
 
 // SAMPLE INPUT/OUTPUT
