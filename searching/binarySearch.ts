@@ -7,17 +7,16 @@ function binarySearch(sortedArr: any[], val: any): number {
   // While the left pointer comes before the right pointer:
   while (leftPointer <= rightPointer) {
     //      - Create a pointer in the middle
-    let middle:number = Math.ceil((leftPointer + rightPointer) / 2);
+    let middle: number = Math.ceil((leftPointer + rightPointer) / 2);
     //      -  If you find the value you want, return the index
     if (sortedArr[middle] === val) return middle;
     //      - If the value is too small, move the left pointer up
     else if (sortedArr[middle] < val) leftPointer = middle + 1;
     //      - If the value is too large, move the right pointer down
-    else  rightPointer = middle - 1;
+    else rightPointer = middle - 1;
   }
-    // If you never find the value, return -1
+  // If you never find the value, return -1
   return -1;
-
 }
 
 // This function accepts a sorted array and a value
@@ -45,7 +44,7 @@ function stevenBinarySearch(sortedArr: any[], val: any): number {
   return sortedArr[middle] === val ? middle : -1;
 }
 // console.log(binarySearch([1,2,3,4,5],2));
-console.log(binarySearch([1,2,3,4,5],3));
+console.log(binarySearch([1, 2, 3, 4, 5], 3));
 console.log(
   stevenBinarySearch(
     [
