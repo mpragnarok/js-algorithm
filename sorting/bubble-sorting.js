@@ -1,4 +1,6 @@
 // A sorting algorithm where the largest values bubble up to the top
+// use bubble sort unless you know the data is nearly sorted
+// time complexity: O(n^2)
 function bubbleSort(arr) {
     // start looping from with a variable called i the end of the array towards the beginning
     let noSwap;
