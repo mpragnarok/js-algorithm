@@ -10,10 +10,12 @@ function bubbleSort(arr) {
             // if arr[j] is greater than arr[j+1], swap those two values
             console.log(arr, arr[j], arr[j + 1]);
             if (arr[j] > arr[j + 1]) {
+                // swap the items
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
                 noSwap = false;
             }
         }
+        // break loop when there's no swap
         if (noSwap) break;
     }
     console.log(arr);
