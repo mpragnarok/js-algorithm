@@ -1,3 +1,5 @@
+// time complexity O(n^2)
+// memory usage is less than bubble sort --> one swap at the end of the loop
 function selectionSort(arr) {
     // Store the first element as the smallest value you've seen so far
 
