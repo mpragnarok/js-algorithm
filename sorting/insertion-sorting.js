@@ -1,4 +1,7 @@
 // build up the sort by gradually creating a larger left half which is always sorted
+// Time complexity:
+// if the data is nearly sorted, insertion sort is good
+// otherwise it's O(n^2)
 
 function insertionSort(arr) {
     // start by picking the second element in the array
