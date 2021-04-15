@@ -46,7 +46,7 @@ Space - O(1)
 // one liner solution
 // What's happening is the Set is removing the duplicates, then comparing the resulting Set to the original argument. If there is a difference in the sizes, this confirms there were duplicates. So the function returns true in that case.
 function areThereDuplicates() {
-    return new Set(arguments).size !== arguments.length;
+  return new Set(arguments).size !== arguments.length;
 }
 
 areThereDuplicates(1, 2, 3); //false

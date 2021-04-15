@@ -10,10 +10,10 @@ const isOdd = (val) => val % 2 !== 0;
 
 //my solution
 function someRecursive(arr, callback) {
-    let flag = arr.length ? callback(arr[0]) : false;
-    if (arr.length === 0) return flag;
-    if (flag) return flag;
-    return someRecursive(arr.slice(1), callback);
+  let flag = arr.length ? callback(arr[0]) : false;
+  if (arr.length === 0) return flag;
+  if (flag) return flag;
+  return someRecursive(arr.slice(1), callback);
 }
 
 // Colt's solution
@@ -35,6 +35,6 @@ function someRecursive(arr, callback) {
 // console.log("someRecursive([4, 6, 8], isOdd)", someRecursive([4, 6, 8], isOdd));
 someRecursive([4, 6, 8], (val) => val > 10); // false
 console.log(
-    "someRecursive([4, 6, 8], (val) => val > 10)",
-    someRecursive([4, 6, 8], (val) => val > 10)
+  "someRecursive([4, 6, 8], (val) => val > 10)",
+  someRecursive([4, 6, 8], (val) => val > 10)
 );

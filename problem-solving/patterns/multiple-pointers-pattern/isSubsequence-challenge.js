@@ -27,12 +27,12 @@ Space Complexity - O(1)
 
 // Recursive but not O(1) Space
 function isSubsequence(str1, str2) {
-    console.log(`str1: ${str1} vs str2: ${str2}`);
-    if (str1.length === 0) return true;
-    if (str2.length === 0) return false;
-    //  arr.slice([start[, end]]) returns a shallow copy of a portion of an array into a new array object
-    if (str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1));
-    return isSubsequence(str1, str2.slice(1));
+  console.log(`str1: ${str1} vs str2: ${str2}`);
+  if (str1.length === 0) return true;
+  if (str2.length === 0) return false;
+  //  arr.slice([start[, end]]) returns a shallow copy of a portion of an array into a new array object
+  if (str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1));
+  return isSubsequence(str1, str2.slice(1));
 }
 
 //Examples:

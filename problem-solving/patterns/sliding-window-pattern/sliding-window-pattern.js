@@ -29,19 +29,19 @@
 // Refactor solution
 // Time complexity: O(N)
 function maxSubarraySum(arr, num) {
-    let maxSum = 0;
-    let tempSum = 0;
-    if (arr.length < num) return null;
-    for (let i = 0; i < num; i++) {
-        maxSum += arr[i];
-    }
-    tempSum = maxSum;
-    for (let i = num; i < arr.length; i++) {
-        // subtract the first num and add new number to get new sum
-        tempSum = tempSum - arr[i - num] + arr[i];
-        maxSum = Math.max(maxSum, tempSum);
-    }
-    return maxSum;
+  let maxSum = 0;
+  let tempSum = 0;
+  if (arr.length < num) return null;
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
+  }
+  tempSum = maxSum;
+  for (let i = num; i < arr.length; i++) {
+    // subtract the first num and add new number to get new sum
+    tempSum = tempSum - arr[i - num] + arr[i];
+    maxSum = Math.max(maxSum, tempSum);
+  }
+  return maxSum;
 }
 
 maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 4); // 17
