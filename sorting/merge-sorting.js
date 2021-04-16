@@ -29,7 +29,7 @@ function merge(arr1, arr2) {
     }
 
     if (j === arr2.length) {
-        mergedArr = mergedArr.concat(arr1.slice(j));
+        mergedArr = mergedArr.concat(arr1.slice(i));
     }
     return mergedArr;
 }
@@ -68,3 +68,23 @@ function mergeAns(arr1, arr2) {
 
 console.log(mergeAns([1, 10, 50], [2, 14, 99, 100]));
 console.log(merge([1, 10, 50], [2, 14, 99, 100]));
+
+// merge sort Pseudocode
+// Once you have smaller sorted arrays, merge those arrays with other sorted arrays until you are back at the full length of the array
+// Once the array has been merged back together, return the merged (and sorted!) array
+/**
+ * BigO
+ * Time: O(n log n): O(log n) decomposition, O(n) comparison per decomposition
+ * Space: O(n)
+ *  */
+function mergeSort(arr) {
+    if (arr.length <= 1) return arr;
+    // Break up the array into halves until you have arrays that are empty or have one element
+    let mid = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+
+    return merge(left, right);
+}
+
+console.log(mergeSort([10, 24, 76, 73]));
