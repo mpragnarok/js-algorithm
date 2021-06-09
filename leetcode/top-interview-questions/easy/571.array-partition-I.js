@@ -39,8 +39,9 @@ var arrayPairSumN = function (nums) {
     // sum up the array
     let sum = 0;
     for (let j = 0; j < arr.length; j++) {
+        // while the number is >0, will keep adding or skip it
+        // cannot use if statement, cause it'll only run one time
         while (arr[j]) {
-            console.log('🚀 ~ file: 571.array-partition-I.js ~ line 43 ~ arrayPairSumN ~ arr[j]', arr[j]);
             if (flag) {
                 sum += j - 10000;
             }
